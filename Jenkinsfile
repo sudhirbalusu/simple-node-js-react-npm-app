@@ -17,12 +17,7 @@ pipeline {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
-                    agent {
-                        docker {
-                            image 'node:6-alpine'
-                            args '-p 3000:3000'
-                            }
-                     }
+                   
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
@@ -33,12 +28,7 @@ pipeline {
                     }
                 }
                 stage('Test On Linux') {
-                   agent {
-                        docker {
-                            image 'node:6-alpine'
-                            args '-p 3000:3000'
-                            }
-                     }
+                   
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
