@@ -18,7 +18,7 @@ pipeline {
             parallel {
                 stage('Test On Windows') {
                     agent {
-                        label "windows"
+                        label any
                     }
                     steps {
                         sh './jenkins/scripts/test.sh'
@@ -31,7 +31,7 @@ pipeline {
                 }
                 stage('Test On Linux') {
                     agent {
-                        label "linux"
+                        label any
                     }
                     steps {
                         sh './jenkins/scripts/test.sh'
