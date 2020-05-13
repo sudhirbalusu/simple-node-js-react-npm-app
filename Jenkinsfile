@@ -18,8 +18,11 @@ pipeline {
             parallel {
                 stage('Test On Windows') {
                     agent {
-                        label any
-                    }
+                        docker {
+                            image 'node:6-alpine'
+                            args '-p 3000:3000'
+                            }
+                     }
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
@@ -30,9 +33,12 @@ pipeline {
                     }
                 }
                 stage('Test On Linux') {
-                    agent {
-                        label any
-                    }
+                   agent {
+                        docker {
+                            image 'node:6-alpine'
+                            args '-p 3000:3000'
+                            }
+                     }
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
