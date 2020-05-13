@@ -21,22 +21,14 @@ pipeline {
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
-                    post {
-                        always {
-                            echo windows
-                        }
-                    }
+                    
                 }
                 stage('Test On Linux') {
                    
                     steps {
                         sh './jenkins/scripts/test.sh'
                     }
-                    post {
-                        always {
-                            echo linux
-                        }
-                    }
+                    
                 }
             }
         }
