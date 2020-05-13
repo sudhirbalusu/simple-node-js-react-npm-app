@@ -23,7 +23,7 @@ pipeline {
                     }
                     post {
                         always {
-                            echo Windows
+                            echo windows
                         }
                     }
                 }
