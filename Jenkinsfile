@@ -34,7 +34,7 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        sh sh './jenkins/scripts/test.sh'
+                        sh './jenkins/scripts/test.sh'
                     }
                     post {
                         always {
